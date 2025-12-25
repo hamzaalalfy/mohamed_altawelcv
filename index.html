@@ -10,17 +10,17 @@
 <style>
 *{box-sizing:border-box;font-family:'Poppins',sans-serif}
 body{margin:0;background:#f4f6f8;color:#333;transition:.3s}
-.container{display:flex}
+.container{display:flex;flex-wrap:wrap}
 
 /* ===== Sidebar ===== */
 .sidebar{
   width:280px;background:#0f4c75;color:#fff;
   padding:30px;min-height:100vh;position:fixed
 }
-.sidebar h1{font-size:22px}
-.title{font-size:14px;opacity:.9}
+.sidebar h1{font-size:22px;margin-bottom:5px}
+.title{font-size:14px;opacity:.9;margin-bottom:15px}
 .contact p,.contact a{
-  font-size:13px;color:#fff;text-decoration:none;display:block
+  font-size:13px;color:#fff;text-decoration:none;display:block;margin-bottom:5px
 }
 button{
   margin-top:10px;padding:8px;width:100%;
@@ -34,115 +34,59 @@ button{
   border-radius:12px;box-shadow:0 5px 20px rgba(0,0,0,.08)
 }
 h2{color:#0f4c75}
-
-/* ===== Hero ===== */
 .hero{
   background:linear-gradient(135deg,#0f4c75,#1abc9c);
   color:#fff;padding:40px;border-radius:15px;
-  margin-bottom:30px
+  margin-bottom:30px;text-align:center;
 }
-
-/* ===== Skills ===== */
 .skill{margin-bottom:12px}
 .bar{background:#ddd;height:8px;border-radius:10px}
 .bar div{background:#1abc9c;height:100%;border-radius:10px}
-
-/* ===== Animation ===== */
 .fade{opacity:0;transform:translateY(20px);transition:.6s}
 .fade.show{opacity:1;transform:none}
-
-/* ===== Dark Mode ===== */
 body.dark{background:#121212;color:#eee}
 body.dark .card{background:#1e1e1e}
 body.dark .sidebar{background:#0b3c5d}
 
-/* ===== Responsive Enhancements ===== */
-
-/* Large Screens */
-@media (min-width:1400px){
-  .content{
-    max-width:1200px;
-    margin-left:300px;
-  }
-}
-
-/* Tablets */
-@media (max-width:1024px){
-  .sidebar{width:240px}
-  .content{
-    margin-left:260px;
-    padding:30px;
-  }
-}
-
-/* Mobile */
+@media (min-width:1400px){ .content{ max-width:1200px; margin-left:300px; } }
+@media (max-width:1024px){ .sidebar{width:240px} .content{ margin-left:260px; padding:30px; } }
 @media (max-width:768px){
   .container{flex-direction:column}
-
-  .sidebar{
-    position:relative;
-    width:100%;
-    min-height:auto;
-    text-align:center;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-  }
-
-  .content{
-    margin-left:0;
-    padding:20px;
-  }
-
-  .hero{
-    padding:25px;
-    text-align:center;
-  }
-
-  h1{font-size:20px}
-  h2{font-size:18px}
-  p,li{font-size:14px}
+  .sidebar{ position:relative;width:100%;min-height:auto;text-align:center;display:flex;flex-direction:column;align-items:center; }
+  .content{ margin-left:0;padding:20px; }
+  .hero{ padding:25px;text-align:center; }
+  h1{font-size:20px} h2{font-size:18px} p,li{font-size:14px}
 }
+@media (max-width:480px){ button{font-size:13px;padding:6px} .card{padding:18px} }
 
-/* Small Mobile */
-@media (max-width:480px){
-  button{font-size:13px;padding:6px}
-  .card{padding:18px}
-}
-
-/* ===== Print / PDF ===== */
 @media print{
-  body{background:#fff}
+  body{background:#fff;color:#000}
   .sidebar,button{display:none}
   .content{margin:0;padding:0}
-  .card{
-    box-shadow:none;
-    border-radius:0;
-  }
+  .card{box-shadow:none;border-radius:0}
 }
 </style>
 </head>
-
 <body>
 <div class="container">
 
-<!-- ===== Sidebar ===== -->
+<!-- Sidebar -->
 <aside class="sidebar">
 <h1>Muhammad<br>Ettaweel</h1>
 <p class="title">QC Chemist & Microbiologist</p>
 
 <div class="contact">
-<p>📍 Damietta, Egypt</p>
+<p>📍 Damietta – Port Said Road</p>
 <p>📧 engmo.taweel@gmail.com</p>
-<p>📞 01027845767</p>
-<a href="https://www.linkedin.com/in/muhammad-ettaweel" target="_blank">🔗 LinkedIn</a>
+<p>📞 01027845767 | 01102061357</p>
+<a href="https://www.linkedin.com/in/muhammad-ettaweel-919b1124b" target="_blank">🔗 LinkedIn</a>
 </div>
 
 <button onclick="document.body.classList.toggle('dark')">🌙 Dark Mode</button>
 <button onclick="downloadPDF()">⬇ Download PDF</button>
 </aside>
 
-<!-- ===== Main Content ===== -->
+<!-- Main Content -->
 <main class="content">
 
 <div class="hero fade">
@@ -150,66 +94,95 @@ body.dark .sidebar{background:#0b3c5d}
 <p>Quality Control Chemist & Microbiologist</p>
 </div>
 
+<!-- Profile -->
 <div class="card fade">
-<h2>Professional Summary</h2>
-<p>
-Aspiring Chemist & Microbiologist seeking to enhance experience in
-petrochemicals, Quality Control, and HSE fields.
-</p>
+<h2>Professional Profile</h2>
+<p>Chemistry and Microbiology graduate from the Faculty of Science, Damietta University. Highly motivated Quality Control Engineer with hands-on experience in food safety, petrochemicals, water analysis, and microbial testing. Seeking to enhance my technical expertise and contribute effectively in Production, Quality, or HSE departments.</p>
 </div>
 
+<!-- Education -->
 <div class="card fade">
 <h2>Education</h2>
-<p><strong>Damietta University</strong> (2021 – 2025)</p>
-<p>Faculty of Science – Chemistry & Microbiology</p>
-<p>GPA: 3.2 / 4</p>
-</div>
-
-<div class="card fade">
-<h2>Graduation Project 🧬</h2>
-<p>
-Microbial Contamination of some Spices in Egyptian Markets and
-Using Natural Oils for Avoiding Fungi.
-</p>
-<strong>Grade: Excellent ⭐⭐⭐⭐⭐</strong>
-</div>
-
-<div class="card fade">
-<h2>Work Experience</h2>
-<p><strong>Quality Control Engineer</strong> – Control Union Egypt (2025)</p>
-<p>Auditing feed & molasses quality and microbial inspection.</p>
-</div>
-
-<div class="card fade">
-<h2>Internships & Visits</h2>
+<p><strong>Damietta University</strong> — Faculty of Science</p>
+<p>Sep 2021 – June 2025</p>
 <ul>
-<li>Children Cancer Hospital 57357 – HACCP</li>
-<li>General Petroleum Company – Oil Analysis & HSE</li>
-<li>Damietta Drinking Water Station – Water Quality</li>
-<li>MOPCO – Quality Control</li>
+<li>Major: Microbiology & Chemistry</li>
+<li>GPA: 3.2 / 4</li>
+<li><strong>Graduation Project:</strong> Microbial Contamination of Some Spices in Egyptian Markets and Using Natural Oils for Avoiding Fungi</li>
+<li>Graduation Project Grade: <strong>Excellent</strong></li>
 </ul>
 </div>
 
+<!-- Work Experience -->
+<div class="card fade">
+<h2>Work Experience</h2>
+<p><strong>Quality Control Engineer</strong> — Control Union Egypt (Damietta Port Authority)</p>
+<p>March 2025 – Present</p>
+<ul>
+<li>Auditing quality of feed and molasses.</li>
+<li>Detecting microbial and fungal diseases.</li>
+<li>Inspection of containers, trucks, and ships.</li>
+<li>Ensuring compliance with quality and safety standards.</li>
+</ul>
+</div>
+
+<!-- Internships & Visits -->
+<div class="card fade">
+<h2>Professional Experience & Internships</h2>
+<ul>
+<li><strong>TRUST for Oils – QC Chemist</strong> (Aug 2025)<br>Principles of oil refining, chemical tests, water analysis.</li>
+<li><strong>EL-Shami El-Asly – QC Chemist</strong> (July 2025)<br>Pasta manufacturing, chemical & microbial testing.</li>
+<li><strong>White Land Dairy Products</strong> (Oct 2024)<br>GHP, dairy production, chemical & microbial analysis.</li>
+<li><strong>Katilo Dairy Products</strong> (Sep 2024)<br>GLP, GMP, dairy product analysis.</li>
+<li><strong>Children’s Cancer Hospital 57357</strong> (Aug 2024)<br>Food safety, HACCP, nutrition principles.</li>
+<li><strong>General Authority for Export & Import Control</strong> (Aug 2024)<br>GMP, chemical & microbial testing.</li>
+<li><strong>General Petroleum Company – Ras Gharib</strong> (July 2024)<br>Oil chemical analysis, OHS, corrosion resistance.</li>
+<li><strong>Damietta Drinking Water Station</strong> (July 2024)<br>Water quality & microbial analysis.</li>
+<li><strong>MOPCO Scientific Visit</strong> (April 2024)</li>
+<li><strong>Damietta Port Authority – OHS</strong> (July 2023)</li>
+</ul>
+</div>
+
+<!-- Activities -->
+<div class="card fade">
+<h2>Extracurricular Activities</h2>
+<ul>
+<li>Presented a scientific poster at the 1st International Conference on Biotechnology.</li>
+<li>Editor of a scientific magazine that won a university competition.</li>
+</ul>
+</div>
+
+<!-- Courses & Certificates -->
 <div class="card fade">
 <h2>Courses & Certificates 🎓</h2>
 <ul>
-<li>GMP – HACCP – GHP</li>
-<li>ISO 9001 – ISO 22000</li>
-<li>Food Microbiology</li>
-<li>QC in Pharmaceutical Manufacturing</li>
+<li><a href="certificates/GMP_HACCP_GHP.pdf" target="_blank">GMP – HACCP – GHP</a></li>
+<li><a href="certificates/ISO_9001_22000.pdf" target="_blank">ISO 9001 – ISO 22000</a></li>
+<li><a href="certificates/Food_Microbiology.pdf" target="_blank">Food Microbiology</a></li>
+<li><a href="certificates/QC_Pharmaceutical.pdf" target="_blank">QC in Pharmaceutical Manufacturing</a></li>
 </ul>
 </div>
 
+<!-- Skills -->
 <div class="card fade">
 <h2>Skills</h2>
-<div class="skill">Quality Control<div class="bar"><div style="width:80%"></div></div></div>
-<div class="skill">Microbiology<div class="bar"><div style="width:75%"></div></div></div>
-<div class="skill">HSE<div class="bar"><div style="width:65%"></div></div></div>
+<div class="skill">Microbial & Chemical Analysis<div class="bar"><div style="width:85%"></div></div></div>
+<div class="skill">Quality Control & Auditing<div class="bar"><div style="width:80%"></div></div></div>
+<div class="skill">HSE<div class="bar"><div style="width:70%"></div></div></div>
+<div class="skill">Problem Solving & Communication<div class="bar"><div style="width:75%"></div></div></div>
+<div class="skill">Leadership & Teamwork<div class="bar"><div style="width:70%"></div></div></div>
 </div>
 
+<!-- Computer Skills -->
+<div class="card fade">
+<h2>Computer Skills</h2>
+<p>Microsoft Word, Excel, PowerPoint — <strong>Very Good</strong></p>
+</div>
+
+<!-- Languages -->
 <div class="card fade">
 <h2>Languages</h2>
-<p>English – B1</p>
+<p>English — B1</p>
 </div>
 
 </main>
@@ -218,18 +191,12 @@ Using Natural Oils for Avoiding Fungi.
 <script>
 // Animation
 const cards=document.querySelectorAll('.fade');
-const obs=new IntersectionObserver(e=>{
-  e.forEach(i=>i.isIntersecting&&i.target.classList.add('show'))
-});
+const obs=new IntersectionObserver(e=>{ e.forEach(i=>i.isIntersecting&&i.target.classList.add('show')) });
 cards.forEach(c=>obs.observe(c));
 
 // PDF
-function downloadPDF(){
-  window.print();
-}
+function downloadPDF(){ window.print(); }
 </script>
 
 </body>
 </html>
-
-
